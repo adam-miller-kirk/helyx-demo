@@ -1,5 +1,5 @@
 #root {
-  --header-height: 3.5rem
+  --header-height: 3.5rem;
 }
 
 .cardHeader {
@@ -9,5 +9,5 @@
 .cardBody {
   width: 100%;
   height: calc(100% - var(--header-height));
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
