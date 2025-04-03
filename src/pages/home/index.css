@@ -1,0 +1,13 @@
+#root {
+  --header-height: 3.5rem
+}
+
+.cardHeader {
+  height: var(--header-height);
+}
+
+.cardBody {
+  width: 100%;
+  height: calc(100% - var(--header-height));
+  overflow-y:scroll;
+}
