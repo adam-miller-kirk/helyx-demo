@@ -1,6 +1,6 @@
 export function getNeighborIndices(
-  x: number,
-  y: number,
+  cellX: number,
+  cellY: number,
   cols: number,
   rows: number
 ) {
@@ -18,11 +18,18 @@ export function getNeighborIndices(
   const neighbors: number[] = [];
 
   directions.forEach(([dx, dy]) => {
-    const nx = x + dx;
-    const ny = y + dy;
+    const neighbourX = cellX + dx;
+    const neighbourY = cellY + dy;
 
-    if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
-      neighbors.push(ny * cols + nx); // Index in flat array
+    // check if neighbour position is in grid bounds
+    if (
+      neighbourX >= 0 &&
+      neighbourX < cols &&
+      neighbourY >= 0 &&
+      neighbourY < rows
+    ) {
+      // if in bounds calculate and push neightbour Index  (3 * 12 + 3 = 39)
+      neighbors.push(neighbourY * cols + neighbourX);
     }
   });
 
